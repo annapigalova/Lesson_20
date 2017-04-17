@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<item>
+		<id>1</id>
+		<name>Racquets</name>
+		<dailyPrice>15.99</dailyPrice>
+		<condition>Good</condition>
+	</item>
+	<item>
+		<id>2</id>
+		<name>Snowboard</name>
+		<dailyPrice>20.00</dailyPrice>
+		<condition>Average</condition>
+	</item>
+	<item>
+		<id>3</id>
+		<name>Surfboard</name>
+		<dailyPrice>35.60</dailyPrice>
+		<condition>Average</condition>
+	</item>
+	<item>
+		<id>4</id>
+		<name> Skis</name>
+		<dailyPrice>5.30</dailyPrice>
+		<condition>Bad</condition>
+	</item>
+	<item>
+		<id>5</id>
+		<name>Skateboard</name>
+		<dailyPrice>6.99</dailyPrice>
+		<condition>Good</condition>
+	</item>
+	<item>
+		<id>6</id>
+		<name>Rollers</name>
+		<dailyPrice>8.99</dailyPrice>
+		<condition>Bad</condition>
+	</item>
+</items>
