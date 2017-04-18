@@ -2,7 +2,7 @@
 public class Item {
 	private int id;
 	private String name;
-	private float dailyPrice;
+	private double dailyPrice;
 	private String condition;
 
 	public int getId() {
@@ -21,11 +21,11 @@ public class Item {
 		this.name = name;
 	}
 
-	public float getDailyPrice() {
+	public double getDailyPrice() {
 		return dailyPrice;
 	}
 
-	public void setDailyPrice(float dailyPrice) {
+	public void setDailyPrice(double dailyPrice) {
 		this.dailyPrice = dailyPrice;
 	}
 

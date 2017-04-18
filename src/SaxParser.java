@@ -6,29 +6,21 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
-public class XMLParser extends DefaultHandler {
+public class SaxParser extends DefaultHandler {
 	private List<Item> itemList = new ArrayList<Item>();
 	private Item item;
 	private StringBuilder text;
 
-	public List<Item> getFoodList() {
+	public List<Item> getItemList() {
 		return itemList;
 	}
 
-	public void startDocument() throws SAXException {
-		System.out.println("Parsing started.");
-	}
-
-	public void endDocument() throws SAXException {
-		System.out.println("Parsing ended.");
-	}
-
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-		System.out.println("startElement -> " + "uri: " + uri + ", localName: " + localName + ", qName: " + qName);
+		// System.out.println("startElement -> " + "uri: " + uri + ", localName:
+		// " + localName + ", qName: " + qName);
 		text = new StringBuilder();
 		if (qName.equals("item")) {
 			item = new Item();
-		//	item.setId((Integer.parseInt(attributes.getValue("id"))));
 		}
 	}
 
@@ -37,7 +29,7 @@ public class XMLParser extends DefaultHandler {
 	}
 
 	public void endElement(String uri, String localName, String qName) throws SAXException {
-		MenuTagName tagName = MenuTagName.valueOf(qName.toUpperCase());
+		ItemTagName tagName = ItemTagName.valueOf(qName.toUpperCase());
 		switch (tagName) {
 		case ID:
 			item.setId(Integer.parseInt(text.toString()));
@@ -46,7 +38,7 @@ public class XMLParser extends DefaultHandler {
 			item.setName(text.toString());
 			break;
 		case DAILYPRICE:
-			item.setDailyPrice((float) Double.parseDouble(text.toString()));
+			item.setDailyPrice(Double.parseDouble(text.toString()));
 			break;
 		case CONDITION:
 			item.setCondition(text.toString());
